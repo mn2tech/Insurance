@@ -8,6 +8,14 @@ from openai import OpenAI
 # 🔐 OpenAI setup (dummy key, replace with yours securely)
 client = OpenAI(api_key="sk-your-key")
 
+# ✅ Branding
+logo = Image.open("nm2tech_logo.png")
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    st.image(logo, use_container_width=False)
+    st.markdown("""
+    """, unsafe_allow_html=True)
+
 # ✅ MUST initialize session state at the top
 if "run_doctor_search" not in st.session_state:
     st.session_state["run_doctor_search"] = False
